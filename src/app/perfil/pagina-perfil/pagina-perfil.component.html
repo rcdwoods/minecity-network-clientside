@@ -1,0 +1,54 @@
+<div class="pagina-perfil">
+  <div class="header">
+    <app-header [usuario]="usuario"></app-header>
+  </div>
+  <div class="conteudo">
+    <div class="container p-grid">
+      <div class="lado-esquerdo p-col-3">
+        <div class="residencias">
+          <p-accordion>
+            <p-accordionTab header="Residências" [selected]="false">
+
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+
+        <div class="conquistas">
+          <p-accordion class="residencias">
+            <p-accordionTab header="Conquistas" [selected]="false">
+
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </div>
+      <div class="centro p-col-6">
+        <div class="p-col-12">
+          <div class="pensamento p-inputgroup">
+            <input class="pensamento__input" type="text" pInputText
+              placeholder="Um dia serei o melhor jogador do Minecity!">
+            <button class="pensamento__botao" type="button" *ngIf="isDonoDoPerfil()" pButton pRipple label="Alterar"></button>
+          </div>
+        </div>
+        <div class="p-col-12 nova-publicacao">
+          <app-nova-publicacao *ngIf="isDonoDoPerfil()"></app-nova-publicacao>
+        </div>
+        <div class="p-col-12 publicacoes">
+          <app-publicacoes [perfilEmExibicao]="username"></app-publicacoes>
+        </div>
+
+      </div>
+      <div class="lado-direito p-col-3">
+        <div class="emblemas">
+          <app-emblemas></app-emblemas>
+        </div>
+        <div class="conquistas">
+          <p-accordion>
+            <p-accordionTab header="Carteira" [selected]="false" class="carteira">
+
+            </p-accordionTab>
+          </p-accordion>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="p-grid">
+  <div class="notificacoes p-col-12">
+    <div class="notificacoes__header p-col-12">
+      <span>Mensagens</span>
+    </div>
+    <div class="notificacao p-col-12" *ngFor="let mensagem of getMensagens()">
+      <a href="javascript:;">
+        <div class="notificacao__avatar p-col-3">
+          <img src="http://minotar.net/avatar/{{mensagem.autor}}">
+        </div>
+        <div class="notificacao__conteudo p-col-9">
+          <p>
+            <strong>{{mensagem.autor}}</strong>
+            <i class="pi pi-circle-on mensagem-nova-icone" *ngIf="!mensagem.isLida"></i>
+          </p>
+          <p [class]="mensagem.isLida ? 'mensagem' : 'mensagem--nova'">{{mensagem.ultimaMensagem}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

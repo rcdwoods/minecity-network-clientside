@@ -1,0 +1,125 @@
+.navbar {
+  top: 0;
+  width: 100%;;
+  position: fixed;
+  z-index: 999999999;
+  background-color: rgb(19, 19, 19);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #4689db1a;
+}
+
+.navbar__pesquisa-icone {
+  z-index: 999;
+}
+
+.navbar__pesquisa {
+  margin-top: -2px;
+  height: 30px;
+  width: auto;
+}
+
+.pesquisa {
+  /* background-color: aqua; */
+}
+
+.navbar__pesquisa ::ng-deep .p-autocomplete-input {
+  margin-top: -2px !important;
+  height: 30px !important;
+  width: 400px !important;
+}
+
+::ng-deep .p-autocomplete-loader {
+  color: black;
+}
+
+.icone-menu-opcoes {
+  float: right;
+  color: white;
+  margin-top: 4px;
+  font-size: 22px;
+}
+
+.icone-notificacao {
+  color: white;
+  float: right;
+  margin-right: 30px;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.icone-mensagem {
+  color: white;
+  float: right;
+  margin-right: 30px;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+.icone-solicitacoes {
+  color: white;
+  float: right;
+  margin-right: 30px;
+  font-size: 22px;
+  margin-top: 5px;
+}
+
+::ng-deep .p-tieredmenu {
+  width: 250px !important;
+  margin-top: 5px;
+}
+
+.inicio a{
+  color: white;
+}
+
+.logo {
+  width: 160px;
+}
+
+.menu {
+  padding-top: 4px;
+  text-align: right;
+}
+
+.menu-item {
+  margin-right: 50px;
+}
+
+.menu-item:last-of-type {
+  margin-right: 100px;
+}
+
+li {
+  display: inline;
+}
+
+.menu-perfil {
+  background-color: #252525;
+  width: auto;
+  height: 28px;
+  border-radius: 20px;
+  float: right;
+  margin-right: 40px;
+}
+
+.menu-perfil:hover {
+  background-color: #2c2c2c;
+}
+
+.menu-perfil img {
+  margin-top: -1px;
+  width: 30px;
+  border-radius: 100%;
+  float: left;
+}
+
+.menu-perfil span {
+  float: right;
+  padding-top: 5px;
+  padding-left: 4px;
+  padding-right: 10px;
+  color: white;
+}
+

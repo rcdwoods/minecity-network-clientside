@@ -1,0 +1,24 @@
+.rodape {
+  color: white;
+}
+
+.rodape-superior {
+  height: 150px;
+  background-color: #3a3f45;
+}
+
+.rodape-inferior {
+  background-color: #33383e;
+  height: 50px;
+  text-align: center;
+}
+
+.copyright-icon {
+  font-size: 40px;
+  float: left;
+}
+
+.copyright {
+  padding-top: 15px;
+  text-align: center;
+}

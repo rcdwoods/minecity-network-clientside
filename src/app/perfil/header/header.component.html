@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="header__capa">
+  </div>
+  <div class="container p-grid">
+    <div class="header__lado-esquerdo p-col-6">
+      <div class="header__informacoes-do-usuario">
+        <img class="header__avatar--gorro" src="../../../assets/images/Ilustração-Gorro-de-Natal-PNG.png">
+        <img class="header__avatar" src="http://minotar.net/avatar/{{usuario?.username ? usuario?.username : 'usuarioPadrao'}}">
+        <h1 class="header__username">{{usuario?.username}}</h1>
+        <div class="header__emblema-borda" pTooltip="Gladiador!">
+          <img src="../../../assets/icons/espada-com-fundo-verde-reduzida.png" class="header__emblema">
+        </div>
+        <a href="javascript:;">
+          <div class="header__adicionar-amigo"
+            *ngIf="usuarioIsDiferenteDoLogado() && !usuarioIsAmigo() && !usuario?.solicitacoesDeAmizade?.includes(getUsernameLogado())">
+            <button pButton icon="pi pi-user-plus" (click)="solicitarAmizade(usuario?.username)"
+              label="Adicionar"></button>
+          </div>
+          <div class="header__adicionar-amigo" *ngIf="usuario?.solicitacoesDeAmizade?.includes(getUsernameLogado()) && !usuarioIsAmigo()">
+            <button pButton icon="pi pi-check"
+              label="Solicitação enviada"></button>
+          </div>
+
+        </a>
+      </div>
+    </div>
+    <div class="header__lado-direito p-col-6">
+      <div class="header__menu">
+        <ul>
+          <li class="header__menu__item" routerLinkActive="selecionado"><a
+              routerLink="/home{{username == getUsernameLogado() ? '' : '/' + username}}">Home</a></li>
+          <li class="header__menu__item" routerLinkActive="selecionado"><a href="javascript:;"
+              routerLink="/friends/{{username}}">Amigos</a></li>
+          <li class="header__menu__item" routerLinkActive="selecionado"><a href="javascript:;">Conquistas</a></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

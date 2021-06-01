@@ -1,0 +1,22 @@
+<div class="login">
+  <div class="titulo">
+    <h1>Logue-se</h1>
+  </div>
+
+  <form #loginForm="ngForm" (ngSubmit)="efetuarLogin(loginForm)">
+    <label>Nome de usuário</label>
+    <input type="text" pInputText name="username" #username ngModel placeholder="Digite aqui seu nome de usuário..."
+      required style="margin-bottom: 10px" />
+
+    <label>Senha</label>
+    <input type="password" name="senha" #senha ngModel pInputText name="password" placeholder="Digite aqui sua senha..." />
+
+    <button type="submit" pButton class="botao-login" label="Entrar"></button>
+  </form>
+
+  <div class="registro p-fluid">
+    <p style="margin-bottom: 10px">Ou</p>
+    <a href="javascript:;" (click)="exibirRegistro.emit(true)">Registre-se agora!</a>
+  </div>
+
+</div>

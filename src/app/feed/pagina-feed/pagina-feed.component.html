@@ -1,0 +1,77 @@
+<div class="pagina-principal">
+  <div class="container">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <!-- Essa DIV representa todo o lado esquerdo da página.-->
+        <div class="lado-esquerdo p-col-3">
+          <div class="noticia">
+            <app-noticias-inicio [propriedadesCss]="noticiasPropriedadesCss"></app-noticias-inicio>
+          </div>
+        </div>
+        <!-- Essa DIV representa todo o centro da página.-->
+        <div class="centro p-col-6">
+          <app-nova-publicacao></app-nova-publicacao>
+
+          <app-publicacoes></app-publicacoes>
+        </div>
+        <!-- Essa DIV representa todo o lado direito da página.-->
+        <div class="lado-direito p-col-3">
+          <div class="informacoes-basicas p-col-4">
+            <div class="p-col-12">
+              <a routerLink="home"><img class="informacoes-basicas__avatar p-col-4"
+                  src="http://minotar.net/avatar/{{username}}"></a>
+              <div class="informacoes-basicas__descricao p-col-8">
+                <a routerLink="home">
+                  <p class="informacoes-basicas__descricao username p-col-12">{{usuario.username}}</p>
+                </a>
+                <a routerLink="home">
+                  <p class="informacoes-basicas__descricao emblema p-col-12">Cidadão</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="painel-emblemas p-col-12">
+            <div class="p-col-12 painel-emblemas__titulo">
+              <a href="javascript:;">Emblemas</a>
+            </div>
+            <img class="painel-emblemas__emblema" src="../../assets/icons/espada-com-fundo-verde.png" [escape]="false"
+              [pTooltip]="emblemaLorde" tooltipPosition="right">
+            <img class="painel-emblemas__emblema" src="../../assets/icons/picareta-com-fundo-verde.png" [escape]="false"
+              [pTooltip]="emblemaCidadaoVerificado" tooltipPosition="right">
+            <img class="painel-emblemas__emblema" src="../../assets/icons/social-com-fundo-verde.png" [escape]="false"
+              [pTooltip]="emblemaCelebridade" tooltipPosition="right">
+          </div>
+          <div class="informacoes-jogador p-col-12">
+            <!-- <div class="informacoes-jogador__header p-col-12">
+              <p>Informações Pessoais</p>
+            </div> -->
+            <div class="informacoes-jogador__box p-col-6">
+              <i class="pi pi-wallet informacoes-jogador__icone" pTooltip="Dinheiro" tooltipPosition="top"
+                style="color: #56BD74"></i>
+              <p class="informacoes-jogador__valor">{{usuario.money}}</p>
+              <p class="informacoes-jogador__valor-titulo" style="color: rgb(61, 201, 57)">Dollars</p>
+            </div>
+            <div class="informacoes-jogador__box p-col-6">
+              <i class="pi pi-home informacoes-jogador__icone" pTooltip="Residências" tooltipPosition="top"
+                style="color:  #2196F3"></i>
+              <p class="informacoes-jogador__valor">0</p>
+              <p class="informacoes-jogador__valor-titulo" style="color: #2196F3">Residências</p>
+            </div>
+            <div class="informacoes-jogador__box p-col-6" style="border-bottom: none;">
+              <i class="pi pi-users informacoes-jogador__icone" pTooltip="Amigos" tooltipPosition="top"
+                style="color: #2196F3;"></i>
+              <p class="informacoes-jogador__valor">0</p>
+              <p class="informacoes-jogador__valor-titulo" style="color: #2196F3">Amigos</p>
+            </div>
+            <div class="informacoes-jogador__box p-col-6" style="border-bottom: none;">
+              <i class="pi pi-slack informacoes-jogador__icone" pTooltip="Emblema em uso" tooltipPosition="top"
+                style="color:  #2196F3"></i>
+              <p class="informacoes-jogador__valor">Cidadão</p>
+              <!-- <p class="informacoes-jogador__valor-titulo" style="color: #2196F3">Status</p> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>

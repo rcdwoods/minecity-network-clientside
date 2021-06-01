@@ -1,0 +1,23 @@
+<div class="p-col-12">
+  <div class="noticias p-col-9" [style]="noticias[noticiaSelecionada].miniatura" [ngStyle]="propriedadesCss">
+    <div class="noticias__header">
+      <p>Notícias</p>
+    </div>
+    <div class="noticias__box-info p-col-12">
+      <div class="noticias__titulo p-col-12">
+        <p>{{noticias[noticiaSelecionada].titulo}}</p>
+      </div>
+      <div class="noticias__descricao p-col-12">
+        <p>{{noticias[noticiaSelecionada].descricao}}</p>
+      </div>
+    </div>
+    <div class="noticias__rodape p-col-12">
+      <div class="noticias__alternar-noticia">
+        <a href="javascript:;" *ngFor="let noticia of noticias" (click)="selecionarNoticia(noticia.id)">
+          <div [ngClass]="isSelecionada(noticia.id)">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

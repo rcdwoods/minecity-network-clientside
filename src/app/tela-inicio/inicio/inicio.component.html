@@ -1,0 +1,94 @@
+<app-navbar-inicio></app-navbar-inicio>
+<div class="background-principal">
+  <div class="background-image">
+    <div class="container">
+      <div class="p-grid">
+        <div class="p-col-8">
+          <div class="frase-boasvindas">
+            <p><strong>Faça parte de um novo mundo.</strong></p>
+            <p><strong>Faça parte do Minecity!</strong></p>
+          </div>
+          <app-noticias-inicio></app-noticias-inicio>
+        </div>
+        <div class="p-col-4">
+          <div class="painel-lateral-direito">
+            <div class="painel-autenticacao">
+              <div class="p-col-12 p-fluid">
+                <app-login *ngIf="!exibirRegistro" (exibirRegistro)="exibirRegistro = $event"></app-login>
+                <app-registro *ngIf="exibirRegistro" (exibirRegistro)="exibirRegistro = $event"></app-registro>
+              </div>
+            </div>
+            <!-- ATRAÇÕES DO MINECITY-->
+            <div class="p-col-12 painel-atracoes" *ngIf="!exibirRegistro">
+              <div class="p-col-12 atracoes">
+                <img class="atracoes-icone" src="../../../assets/icons/espada-com-fundo-verde.png">
+                <p class="atracoes-descricao">Enfrente seus inimigos!</p>
+              </div>
+              <div class="p-col-12 atracoes">
+                <img class="atracoes-icone" src="../../../assets/icons/picareta-com-fundo-verde.png">
+                <p class="atracoes-descricao">Construa suas residências!</p>
+              </div>
+              <div class="p-col-12 atracoes">
+                <img class="atracoes-icone" src="../../../assets/icons/social-com-fundo-verde.png">
+                <p class="atracoes-descricao">Torne-se o mais popular!</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="p-grid">
+        <div class="p-col-8">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fundo-da-pagina">
+    <div class="container">
+      <div class="painel-inferior">
+        <div class="p-grid">
+          <div class="p-col-6 painel-inferior__bloco">
+            <img src="../../../assets/icons/espada-com-fundo-verde.png" class="painel-inferior__icone"
+              alt="icone-espada" />
+            <p class="painel-inferior__titulo"><a>Junte-se a outros jogadores em uma luta sem fim</a></p>
+            <p class="painel-inferior__descricao">No Minecity, além de diversas arenas de batalha, o PvP é liberado
+              nas ruas de toda a cidade às noites. Caso você não queira batalhar, poderá se esconder dentro das áreas
+              públicas ou de alguma de suas residências.</p>
+          </div>
+          <div class='p-col-6 painel-inferior__bloco--direita'>
+            <img src="../../../assets/icons/social-com-fundo-verde.png" class="painel-inferior__icone"
+              alt="icone-espada" />
+            <p class="painel-inferior__titulo"><a>O único servidor com uma rede social</a></p>
+            <p class="painel-inferior__descricao"> Por último, o maior diferencial do Minecity é ter uma rede social
+              própria, onde todos os jogadores podem se comunicar, criar publicações, adquirir benefícios do jogo,
+              participar de eventos e muito mais! Este é o Minecity. O servidor feito para todos! =)</p>
+          </div>
+          <div class="p-col-6 painel-inferior__bloco">
+            <img src="../../../assets/icons/picareta-com-fundo-verde.png" class="painel-inferior__icone"
+              alt="icone-espada" />
+            <p class="painel-inferior__titulo"><a>Construa suas residências para que
+              todos possam ver!</a>
+            </p>
+            <p class="painel-inferior__descricao">Você já imaginou ter residências no centro de uma cidade, onde todos
+              pudessem admirá-la? Aqui você pode. Além disso, ela poderá aparecer aqui, na rede social, como a melhor
+              casa ou apartamento da semana!</p>
+          </div>
+          <div class='p-col-6 painel-inferior__bloco--direita'>
+            <img src="../../../assets/icons/social-com-fundo-verde.png" class="painel-inferior__icone"
+              alt="icone-espada" />
+            <p class="painel-inferior__titulo"><a>O único servidor com uma rede social</a></p>
+            <p class="painel-inferior__descricao"> Por último, o maior diferencial do Minecity é ter uma rede social
+              própria, onde todos os jogadores podem se comunicar, criar publicações, adquirir benefícios do jogo,
+              participar de eventos e muito mais! Este é o Minecity. O servidor feito para todos! =)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-rodape></app-rodape>

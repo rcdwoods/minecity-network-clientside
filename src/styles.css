@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+a {
+  text-decoration-line: none;
+  color: #22DBDF;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll !important;
+  background-color: #fbfbfb;
+}

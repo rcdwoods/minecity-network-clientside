@@ -1,0 +1,59 @@
+<div class="navbar">
+  <div class="container">
+    <div class="p-grid">
+      <div class="p-col-2">
+        <a routerLink=""><img src="../../../assets/images/logo.png" class="logo" alt="logo" /></a>
+      </div>
+      <div class="pesquisa p-col-5">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search navbar__pesquisa-icone"></i>
+          <p-autoComplete class="navbar__pesquisa" [(ngModel)]="text" [suggestions]="results"
+            (completeMethod)="search($event)" placeholder="Pesquisa por outro jogador aqui..."
+            (onSelect)="aoSelecionar($event)" [inputStyle]="{'padding-left': '30px'}">
+            <ng-template let-username pTemplate="item">
+              <img src="http://minotar.net/avatar/{{username}}"
+                style="float: left;width:32px;margin:5px 14px 2px 5px; border-radius: 100%" />
+              <div style="font-size:18px;float:left;margin:10px 10px 0 0">{{username}}</div>
+            </ng-template>
+          </p-autoComplete>
+          <!-- <input type="text" class="navbar__pesquisa" pInputText placeholder="Pesquise por outro jogador aqui..."> -->
+        </span>
+      </div>
+      <div class="p-col-5">
+        <!-- Menu com função Toggle -->
+        <p-tieredMenu #menu [model]="items" [popup]="true">
+        </p-tieredMenu>
+        <a href="javascript:;" class="pi pi-caret-down icone-menu-opcoes" (click)="menu.toggle($event)"></a>
+        <!-- Sininho -->
+        <div (clickOutside)="exibirNotificacoes = false">
+          <app-notificacoes *ngIf="exibirNotificacoes == true"></app-notificacoes>
+          <a href="javascript:;"><i class="pi pi-bell icone-notificacao" #notificacoes
+              (click)="exibirNotificacoes = !exibirNotificacoes" pBadge value="{{getQuantidadeDeNotificacoes()}}"></i>
+          </a>
+        </div>
+        <!-- Mensagens -->
+        <div (clickOutside)="exibirMensagens = false">
+          <app-mensagens *ngIf="exibirMensagens == true"></app-mensagens>
+          <a href="javascript:;"><i class="pi pi-envelope icone-mensagem" (click)="exibirMensagens = !exibirMensagens"
+              pBadge value="2"></i></a>
+        </div>
+        <!-- Solicitações de Amizade -->
+        <div (clickOutside)="exibirSolicitacoesDeAmizade = false">
+          <app-solicitacoes-amizade *ngIf="exibirSolicitacoesDeAmizade == true"></app-solicitacoes-amizade>
+          <a href="javascript:;" *ngIf="getQuantidadeDeSolicitacoes()"><i class="pi pi-user icone-solicitacoes"
+              (click)="exibirSolicitacoesDeAmizade = !exibirSolicitacoesDeAmizade" pBadge
+              value="{{getQuantidadeDeSolicitacoes()}}"></i></a>
+          <a href="javascript:;" *ngIf="getQuantidadeDeSolicitacoes() == 0"><i class="pi pi-user icone-solicitacoes"
+              (click)="exibirSolicitacoesDeAmizade = !exibirSolicitacoesDeAmizade"></i></a>
+        </div>
+        <div class=" menu-perfil">
+          <a routerLink="/home">
+            <img src="http://minotar.net/avatar/{{getUsername()}}">
+            <span>{{getUsername()}}</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

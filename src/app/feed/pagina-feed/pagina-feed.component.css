@@ -1,0 +1,158 @@
+.container {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+.lado-esquerdo {
+  float: left;
+}
+
+.lado-direito {
+  float: right;
+}
+
+.noticia {
+  position: fixed;
+  left: 25px;
+}
+
+.centro {
+  display: inline-block;
+  height: 670px;
+}
+
+.pagina-principal {
+  margin-top: 70px !important;
+  width: 100%;
+  height: auto;
+}
+
+.informacoes-basicas {
+  position: fixed;
+  padding-top: 10px;
+  width: 300px;
+}
+
+.informacoes-basicas__avatar {
+  box-shadow: 0px 0px 1px rgba(59, 59, 59, 0.384);
+  width: 80px;
+  border-radius: 20px;
+  float: left;
+}
+
+.informacoes-basicas__descricao {
+  margin-top: 3px;
+  float: left;
+}
+
+.informacoes-basicas__descricao.username {
+  color: rgb(139, 139, 139);
+  text-shadow: 0px 0px 2px rgba(107, 107, 107, 0.479);
+}
+
+.informacoes-basicas__descricao.emblema {
+  color: rgb(167, 167, 167);
+  padding: 0 !important;
+  margin: 0 !important;
+  margin-top: -8px !important;
+  padding-left: 18px !important;
+  font-size: 14px;
+  text-shadow: 0px 0px 2px rgba(99, 99, 99, 0.479);
+}
+
+.informacoes-jogador {
+  /* box-shadow: 0px 0px 3px rgba(155, 155, 155, 0.747); */
+  /* background-color: rgb(255, 255, 255); */
+  position: fixed;
+  margin-left: -42px;
+  margin-top: 260px !important;
+  float: right;
+  width: 380px;
+  border-radius: 8px;
+  /* border: solid rgb(207, 207, 207) 1px; */
+  padding: 0;
+}
+
+
+.informacoes-jogador__box {
+  display: inline-block;
+  border-bottom: rgb(211, 211, 211) 1px solid;
+}
+
+.informacoes-jogador__icone {
+  font-size: 22px;
+  float: left;
+}
+
+.informacoes-jogador__valor-titulo {
+  float: right;
+  margin-top: 2px;
+  margin-right: 10px;
+  text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.384);
+}
+
+.informacoes-jogador__valor {
+  padding-left: 20px;
+  display: inline-block;
+  text-align: center;
+  padding-top: 2px;
+  color: rgb(121, 121, 121);
+  text-shadow: 0px 0px 3px rgba(155, 155, 155, 0.384);
+}
+
+.painel-emblemas {
+  box-shadow: 0px 0px 1px rgba(155, 155, 155, 0.747);
+  position: fixed;
+  margin-top: 120px !important;
+  margin-left: -40px;
+  float: right;
+  width: 370px;
+  text-align: center;
+  border: rgb(231, 231, 231) 1px solid;
+  border-radius: 8px;
+  background: rgb(255, 255, 255);
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.painel-emblemas-dentro {
+  position: fixed;
+}
+
+.painel-emblemas__titulo {
+  border-bottom: rgb(247, 247, 247) 1px solid;
+  width: 369px;
+  text-align: center;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-left: -1px;
+  margin-top: -2px;
+  padding: 12px 0 8px;
+}
+
+.painel-emblemas__titulo a {
+  color:  #6d6d6d;
+  text-shadow: 0px 0px 5px #72727254;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.painel-emblemas__emblema {
+  margin-top: 10px;
+  width: 54px;
+  height: 54px;
+  font-size: 44px;
+  border-radius: 100%;
+  background-color: rgb(241, 241, 241);
+  padding-top: -10px;
+  box-shadow: 0px 0px 3px rgba(155, 155, 155, 0.747);
+  margin-right: 10px;
+}
+
+.painel-emblemas__emblema:hover {
+  box-shadow: 0px 0px 3px rgba(17, 199, 255, 0.856);
+}
+
+.painel-emblemas__emblema:last-of-type {
+  margin-right: 0;
+}

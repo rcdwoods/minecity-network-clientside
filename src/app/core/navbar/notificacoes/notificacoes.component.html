@@ -1,0 +1,17 @@
+<div class="p-grid">
+  <div class="notificacoes p-col-12">
+    <div class="notificacoes__header p-col-12">
+      <span>Notificações</span>
+    </div>
+    <div class="notificacao p-col-12" *ngFor="let notificacao of getNotificacoes()">
+      <a href="javascript:;">
+        <div class="notificacao__avatar p-col-3">
+          <img src="http://minotar.net/avatar/{{notificacao.autor}}">
+        </div>
+        <div class="notificacao__conteudo p-col-9">
+          <p><strong>{{notificacao.autor}}</strong> {{getNotificacaoTexto(notificacao)}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<form #publicacaoForm="ngForm" (ngSubmit)="novaPublicacao(publicacaoForm); texto.value = '';">
+  <div class="painel-publicacao">
+    <div class="painel-publicacao__header p-col-12">
+      <p>Nova publicação</p>
+    </div>
+    <div class="painel-publicacao__esquerda p-col-2">
+      <img class="painel-publicacao__avatar" src="http://minotar.net/avatar/{{username}}">
+    </div>
+    <div class="painel-publicacao__direita p-col-10">
+      <textarea class="painel-publicacao__formulario" placeholder="Digite algo que deseja compartilhar com todos... =)"
+        name="texto" #texto ngModel pInputTextarea [required]="true"></textarea>
+    </div>
+    <div class="painel-publicacao__line p-col-12">
+    </div>
+
+    <div class="painel-publicacao__rodape p-col-12">
+      <div class="painel-publicacao__util">
+        <a href="javascript:;"><i class="pi pi-tag painel-publicacao__marcacao-amigos" pTooltip="Marcar amigo"
+            tooltipPosition="top"></i></a>
+        <a href="javascript:;"><i class="pi pi-home painel-publicacao__marcacao-casa" pTooltip="Marcar residência"
+            tooltipPosition="top"></i></a>
+      </div>
+      <!-- Botão para fazer nova publicação-->
+      <button type="submit" class="painel-publicacao__botao" [disabled]="texto.value.length == 0" pButton
+        label="Publicar"></button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,60 @@
+<div class="publicacao" *ngFor="let publicacao of getPublicacoes()">
+  <div class=" publicacao__header p-col-12">
+    <img src="http://minotar.net/avatar/{{publicacao.autor}}" class="publicacao__avatar">
+    <a routerLink="/home/{{publicacao.autor}}"><p class="publicacao__username">{{publicacao.autor}}</p></a>
+    <p class="publicacao__data">{{getTempoDePostagem(publicacao)}}</p>
+    <p-menu #menu [popup]="true" [model]="publicacaoOpcoes" (onShow)="aoClicarEmOpcoesNaPublicacao(publicacao.id)"></p-menu>
+    <div class="publicacaoOpcoes" *ngIf="publicacao.autor == username">
+      <a href="javascript:;">
+        <i type="button" class="pi pi-ellipsis-h" label="Show" (click)="menu.toggle($event)"></i>
+      </a>
+    </div>
+  </div>
+  <div class="publicacao__box p-col-12">
+    <p class="publicacao__texto">
+      {{publicacao.texto}}
+    </p>
+  </div>
+  <div class="publicacao__rodape p-col-12">
+    <div class="publicacao__interacoes p-col-12">
+
+      <div class="publicacao__ameis-contagem" [escape]="false" [pTooltip]="exibirReacoes(publicacao)" tooltipPosition="top">
+        <a href="javascript:;"><i class="pi pi-heart publicacao__ameis-icone"></i></a>
+        <a href="javascript:;" class="publicacao__valores">{{publicacao.curtidas?.length}}</a>
+      </div>
+
+      <div class="publicacao__comentarios-contagem" [escape]="false" pTooltip="<p style='font-size: 14px'>Comentários<p>" tooltipPosition="top">
+        <a href="javascript:;"><i class="pi pi-comment publicacao__comentarios-icone"></i></a>
+        <a href="javascript:;" class="publicacao__valores">{{publicacao.comentarios?.length}}</a>
+      </div>
+
+    </div>
+    <div class="publicacao__reagir p-col-12" [pTooltip]="publicacaoIsCurtida(publicacao, username) ? 'Descurtir publicação' : 'Curtir publicação'" tooltipPosition="top">
+      <a href="javascript:;" (click)="reagir(username, publicacao)"><i class="pi pi-heart publicacao__amei"></i>
+        {{publicacaoIsCurtida(publicacao, username) ? 'Descurtir' : 'Curtir'}}</a>
+    </div>
+    <div class="comentarios p-col-12">
+      <img src="http://minotar.net/avatar/{{username}}" class="comentarios__avatar">
+      <textarea class="comentarios__formulario p-col-8" placeholder="Escreva um comentário..." name="texto" #texto
+        ngModel pInputTextarea [required]="true" [autoResize]="true"
+        (keydown)="$event.keyCode === 13 && texto.value == ''? texto.blur() : adicionarComentario($event, texto.value, publicacao.id);" (keyup.enter)="texto.value = ''"></textarea>
+      <div class="p-col-12" *ngFor="let comentario of publicacao.comentarios">
+        <img src="http://minotar.net/avatar/{{comentario.autor}}" class="comentarios__avatar--comentario">
+        <div class="comentarios__box">
+          <div class="comentarios__autor">
+            <a routerLink="/home/{{comentario.autor}}">{{comentario.autor}}</a>
+          </div>
+          <div class="comentarios__comentario">
+            <p>{{comentario.texto}}</p>
+          </div>
+          <p-menu #menu2 [popup]="true" [model]="comentarioOpcoes" (onShow)="aoClicarEmOpcoesNoComentario(comentario.id, publicacao.id)"></p-menu>
+          <div class="comentarioOpcoes" *ngIf="comentario.autor == username">
+            <a href="javascript:;">
+              <i type="button" class="pi pi-ellipsis-h" label="Show" (click)="menu2.toggle($event)"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="registro">
+  <div class="titulo">
+    <h1>Registre-se</h1>
+  </div>
+
+  <form #registroForm="ngForm" (ngSubmit)="efetuarRegistro(registroForm)">
+    <label>E-mail</label>
+  <input type="email" pInputText name="email" #email ngModel placeholder="Digite aqui seu e-mail..." required
+    style="margin-bottom: 10px" />
+
+  <label>Nome de usuário</label>
+  <input type="text" pInputText name="username" #username ngModel placeholder="Digite aqui nome de usuário..." required
+    style="margin-bottom: 10px" />
+
+  <label>Senha</label>
+  <input type="password" pInputText name="senha" #senha ngModel placeholder="Digite aqui sua senha..." required />
+
+  <div class="checkbox">
+    <p-checkbox value="val2" ></p-checkbox>
+    <p class="checkbox__texto" style="font-weight: bold;">Mantenha-me atualizado sobre novidades do Minecity!</p>
+  </div>
+
+  <div class="checkbox">
+    <p-checkbox value="val1" [required]="true" ></p-checkbox>
+    <p class="checkbox__texto">Eu aceito os <a href="javascript:;">Termos e Condições, Política de Privacidade e Política de Cookies</a></p>
+  </div>
+
+  <button type="submit" [disabled]="!registroForm.valid" pButton class="botao-login" label="Registrar"></button>
+  </form>
+
+  <div class="text-login p-fluid">
+    <p style="margin-bottom: 10px">Ou</p>
+    <a href="javascript:;" (click)="exibirRegistro.emit(false)">Volte à tela de login</a>
+  </div>
+</div>

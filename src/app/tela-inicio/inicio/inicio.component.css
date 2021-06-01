@@ -1,0 +1,122 @@
+.background-image {
+  background-image: url("../../../assets/images/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 740px;
+}
+
+.background-principal {
+  background-color: #161616;
+}
+
+.painel-inferior {
+  padding-top: 35px;
+  padding-right: 30px;
+  padding-left: 20px;
+  color: white;
+  position: relative;
+  z-index: 9999;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.493);
+  margin-top: -40px;
+  border-radius: 20px;
+  background-color: #44484e;
+  height: 500px;
+}
+
+.painel-inferior__bloco {
+  padding: 20px;
+  height: 227px;
+}
+
+.painel-inferior__bloco--direita {
+  padding: 20px;
+  height: 227px;
+  width: 580px;
+}
+
+.painel-inferior__icone {
+  float: left;
+  display: inline;
+  width: 180px;
+}
+
+.painel-inferior__titulo {
+  padding-top: 15px;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.painel-inferior__descricao {
+  padding-top: 8px;
+  text-align: justify;
+}
+
+
+.fundo-da-pagina {
+  height: 600px;
+}
+
+.painel-lateral-direito {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.315);
+  height: 800px;
+  width: 350px;
+  /* border-left: solid 1px rgb(119, 119, 119);
+  border-bottom: solid 1px rgb(119, 119, 119);
+  border-right: solid 1px rgb(119, 119, 119); */
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.painel-autenticacao {
+  width: 300px;
+  margin: 0 auto;
+}
+
+.titulo {
+  padding-top: 40px;
+  text-align: center;
+  color: white;
+}
+
+label {
+  display: block;
+}
+
+
+.frase-boasvindas {
+  margin-left: -28px;
+  margin-top: 20px;
+  padding-right: 200px;
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+
+}
+
+.painel-atracoes {
+  padding-top: 70px;
+}
+
+.atracoes {
+  display: block;
+  float: right;
+  padding-left: 25px;
+}
+
+.atracoes-icone {
+  float: left;
+  width: 60px;
+  height: 60px;
+}
+
+.atracoes-descricao {
+  font-weight: bold;
+  display: inline;
+  color: #22DBDF;
+  float: left;
+  padding-top: 22px;
+  padding-left: 10px;
+
+}

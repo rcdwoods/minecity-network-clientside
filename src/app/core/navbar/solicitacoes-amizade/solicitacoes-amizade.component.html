@@ -1,0 +1,25 @@
+<div class="p-grid">
+  <div class="notificacoes p-col-12">
+    <div class="notificacoes__header p-col-12">
+      <span>Pedidos de Amizade</span>
+    </div>
+    <div class="notificacao p-col-12" *ngFor="let solicitacaoDeAmizade of getSolicitacoesDeAmizade()">
+      <a href="javascript:;">
+        <div class="notificacao__avatar p-col-3">
+          <img src="http://minotar.net/avatar/{{solicitacaoDeAmizade}}">
+        </div>
+        <div class="notificacao__conteudo p-col-9">
+          <p><strong>{{solicitacaoDeAmizade}}</strong> te enviou uma solicitação de amizade.</p>
+          <div class="solicitacao__resposta">
+            <button type="btn" pButton (click)="aceitarSolicitacao(solicitacaoDeAmizade)">Aceitar</button>
+            <button type="btn" pButton (click)="recusarSolicitacao(solicitacaoDeAmizade)" class="botao-recusar">Recusar</button>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="solicitacao__info" *ngIf="getSolicitacoesDeAmizade().length == 0">
+      <p>Não há mais nenhum pedido de amizade por aqui...</p>
+      <p style="font-size: 24px; margin-top: 10px; font-weight: bold">:(</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+.navbar {
+  background-color: rgb(19, 19, 19);
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #4689db1a;
+  position: relative;
+}
+
+.inicio a{
+  color:#22DBDF !important;
+}
+
+.logo {
+  width: 160px;
+}
+
+.menu {
+  padding-top: 7px;
+  text-align: right;
+}
+
+.menu-item {
+  margin-right: 50px;
+}
+
+.menu-item a {
+  color: white;
+}
+
+.menu-item a:hover {
+  color: #22DBDF;
+}
+
+.menu-item:last-of-type {
+  margin-right: 100px;
+}
+
+li {
+  display: inline;
+}

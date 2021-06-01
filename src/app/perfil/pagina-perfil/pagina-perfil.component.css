@@ -1,0 +1,130 @@
+
+
+.container {
+  width: 1470px;
+  margin: 0 auto;
+
+}
+
+.pagina-perfil {
+  width: 100%;
+  height: auto;
+}
+
+.conteudo {
+  margin-top: -66px;
+}
+
+.lado-esquerdo {
+  /* background-color: aquamarine; */
+}
+
+.centro {
+  padding-top: 0;
+  /* background-color: blueviolet; */
+  /* background-color: bisque; */
+}
+
+.lado-direito {
+  /* background-color: cornflowerblue; */
+}
+
+.header {
+  height: 390px;
+}
+
+.pensamento {
+  width: 543px;
+  margin-left: 80px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.pensamento__input {
+  border-top-left-radius: 20px !important;
+  padding-left: 20px;
+  height: 35px;
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.pensamento__inputa {
+  border-top-left-radius: 20px !important;
+  padding-left: 20px;
+  height: 35px;
+  border: 1px solid rgb(226, 226, 226);
+  border-top-right-radius: 20px !important;
+}
+
+.pensamento__input:hover {
+  border: 1px solid rgb(226, 226, 226);
+}
+
+.pensamento__botao {
+  background-color: black;
+  border-top-right-radius: 20px !important;
+  border-bottom-right-radius: 20px !important;
+  border: 1px solid black;
+  height: 35px;
+}
+
+.pensamento__botao:hover {
+  background-color: rgb(54, 54, 54);
+  border: 1px solid black;
+}
+
+::ng-deep .p-accordion-header-link {
+  background-color: rgb(255, 255, 255) !important;
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+}
+
+::ng-deep .p-accordion-header-link:focus {
+  background-color: rgb(255, 255, 255) !important;
+  box-shadow: none !important;
+}
+
+::ng-deep .p-accordion-header-text {
+  width: 82% !important;
+  text-align: center;
+  color: #2E99C0;
+  text-shadow: 0px 0px 5px #00000054;
+  font-size: 20px;
+}
+
+.carteira ::ng-deep .p-accordion-header-text {
+  width: 82% !important;
+  text-align: center;
+  color: #0CDF7E;
+  text-shadow: 0px 0px 5px #00000054;
+  font-size: 20px;
+}
+
+::ng-deep  .p-accordion-content {
+  background-color: #343434 !important;
+  color: white !important;
+  border-radius: 8px !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.nova-publicacao {
+  margin-top: -12px;
+  margin-bottom: -16px;
+}
+
+.publicacoes {
+  /* TO DO */
+}
+
+.residencias {
+  margin-bottom: 20px !important;
+}
+
+
+.conquistas {
+  margin-bottom: 20px !important;
+}
+
+.emblemas {
+  margin-bottom: 20px !important;
+}

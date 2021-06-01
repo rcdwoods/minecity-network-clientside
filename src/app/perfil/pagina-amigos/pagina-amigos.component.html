@@ -1,0 +1,72 @@
+<div class="header">
+  <app-header [usuario]="usuario"></app-header>
+</div>
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col-4">
+      <div class="detalhes" id="detalhes">
+        <div class="detalhes__header">
+          <span>Saiba mais</span>
+        </div>
+        <div class="detalhes__pesquisa">
+          <form (ngSubmit)="pesquisarAmigos(friendname.value)">
+            <label>Encontrar amigo</label>
+            <input type="text" name="friendname" #friendname ngModel pInputText placeholder="Digite um nome aqui...">
+            <button type="btn" pButton>Pesquisar</button>
+          </form>
+        </div>
+        <div class="detalhes__usuario">
+          <div class="p-col-5" style="float: left;">
+            <img class="detalhes__avatar" src="http://minotar.net/avatar/{{amigoEmExibicao.username ? amigoEmExibicao.username : 'usernamePadrao'}}">
+          </div>
+          <div class="p-col-7" style="float: right;">
+            <div class="detalhes__username">
+              <a routerLink="/home/{{amigoEmExibicao.username}}">{{amigoEmExibicao.username ? amigoEmExibicao.username :
+                'Nome do amigo'}}</a>
+            </div>
+            <div class="detalhes__bloco">
+              <img src="../../../assets/icons/trofeu-icone.png" style="width: 30px; float: left;">
+              <span style="float:left; padding-left: 10px; margin-top: 7px; font-weight: bold;">Vencedor!</span>
+            </div>
+            <div class="detalhes__bloco">
+              <img src="../../../assets/icons/moedas.png" style="width: 30px; float: left; margin-top: 4px">
+              <span style="float:left; padding-left: 10px; margin-top: 7px;">{{amigoEmExibicao.money ?
+                amigoEmExibicao.money + ' Moedas': 0 + ' Moedas'}}</span>
+            </div>
+            <div class="detalhes__bloco">
+              <img src="../../../assets/icons/friends.png" style="width: 30px; float: left; margin-top: 3px">
+              <span style="float:left; padding-left: 10px; margin-top: 7px;">{{amigoEmExibicao.amigos.length ?
+                amigoEmExibicao.amigos.length + ' Amigos' : 0 + ' Moedas'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-8">
+      <div class="resultado">
+        <div class="resultado__header">
+          <ul class="resultado__menu">
+            <li class="menu__item selecionado"><a href="javascript:;">Todos amigos</a></li>
+            <li class="menu__item"><a href="javascript:;">Mais populares</a></li>
+            <li class="menu__item"><a href="javascript:;">Adicionados recentemente</a></li>
+          </ul>
+        </div>
+        <div class="resultado__conteudo">
+          <div class="resultado__amigo" *ngFor="let amigo of amigos">
+            <a href="javascript:;" (click)="selecionarAmigoParaExibicao(amigo.username)">
+              <a href="javascript:;">
+                <i type="button" class="pi pi-ellipsis-h resultado__opcoes" label="Show"
+                  style="color: rgb(236, 236, 236)"></i>
+              </a>
+              <img src="http://minotar.net/avatar/{{amigo.username}}" class="resultado__avatar">
+              <div class="resultado__informacoes">
+                <span style="color: white">{{amigo.username}}</span>
+                <p>{{amigo.amigosEmComum.length}} amigos em comum</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

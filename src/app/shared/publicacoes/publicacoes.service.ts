@@ -24,11 +24,10 @@ export class PublicacoesService {
     private errorHandlerService: ErrorHandlerService
   ) { }
 
-  headers = new HttpHeaders()
-    .append('Authorization', 'Bearer ' + localStorage.getItem('token'));
 
   novaPublicacao(publicacao: Publicacao): Promise<any> {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     // this.publicacoes?.push(publicacao);
     return this.httpClient.post<any>(this.publicacoesUrl,
       publicacao, { headers }).toPromise().then(publicacao => {
@@ -46,7 +45,8 @@ export class PublicacoesService {
   }
 
   deletePublicacao(publicacaoId?: string) {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     console.log(headers)
     return this.httpClient.delete(this.publicacoesUrl + publicacaoId, { headers })
       .toPromise().then(() => {
@@ -66,12 +66,14 @@ export class PublicacoesService {
   };
 
   getPublicacoesDoUsuario(autor: String): Promise<any> {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     return this.httpClient.get(this.publicacoesUrl + autor, { headers }).toPromise();
   }
 
   novoComentario(publicacaoId?: string, comentario?: Comentario): Promise<any> {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     return this.httpClient.post(this.publicacoesUrl + `comentario/${publicacaoId}`, comentario, { headers }).toPromise();
   }
 
@@ -84,7 +86,8 @@ export class PublicacoesService {
   }
 
   removerComentario(comentarioId?: String, publicacaoId?: String) {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     this.httpClient.delete(this.publicacoesUrl + `comentario/${publicacaoId}/${comentarioId}`, { headers }).subscribe(() => {
       console.log('Comentário removido com sucesso.')
     })
@@ -130,7 +133,8 @@ export class PublicacoesService {
   }
 
   adicionarCurtida(username: String, publicacao: Publicacao) {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     let curtida: Curtida = new Curtida();
     curtida.autor = username;
     this.httpClient.post(this.publicacoesUrl + `curtida/${publicacao.id}`, curtida, { headers }).subscribe(() => {
@@ -139,7 +143,8 @@ export class PublicacoesService {
   }
 
   removerCurtida(username: String, publicacao: Publicacao) {
-    const headers = this.headers;
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
     this.httpClient.delete(this.publicacoesUrl + `curtida/${publicacao.id}/${username}`, { headers }).subscribe(() => {
       this.removerCurtidaDaListaDeCurtidas(username, publicacao);
     })

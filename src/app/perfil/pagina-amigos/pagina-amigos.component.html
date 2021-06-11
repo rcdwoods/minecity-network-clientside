@@ -11,8 +11,8 @@
         <div class="detalhes__pesquisa">
           <form (ngSubmit)="pesquisarAmigos(friendname.value)">
             <label>Encontrar amigo</label>
-            <input type="text" name="friendname" #friendname ngModel pInputText placeholder="Digite um nome aqui...">
-            <button type="btn" pButton>Pesquisar</button>
+            <input type="text" name="friendname" #friendname ngModel pInputText placeholder="Digite um nome aqui..." [disabled]="amigos.length == 0">
+            <button type="btn" pButton [disabled]="amigos.length == 0">Pesquisar</button>
           </form>
         </div>
         <div class="detalhes__usuario">

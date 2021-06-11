@@ -129,4 +129,15 @@ export class AuthService {
     this.limparRefreshToken();
   }
 
+  obterNovoAccessTokenCasoExpirado() {
+    if(this.isAccessTokenInvalido()) {
+      this.obterNovoAccessToken();
+    }
+  }
+
+  obterTokenAtual() {
+    this.obterNovoAccessTokenCasoExpirado();
+    return localStorage.getItem('token');
+  }
+
 }

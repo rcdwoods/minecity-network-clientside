@@ -74,7 +74,7 @@ export class PaginaAmigosComponent implements OnInit {
 
   // Seleciona o primeiro usuário da lista de amigos para ser exibido no painel.
   selecionarAmigoPadraoParaExibicao() {
-    if (this.usuario.amigos) {
+    if (this.usuario.amigos.length > 0) {
       this.usuarioService.getUsuario(this.usuario.amigos[0]).then(usuario => {
         this.amigoEmExibicao = usuario;
       }).catch(erro => {
@@ -108,7 +108,7 @@ export class PaginaAmigosComponent implements OnInit {
     this.amigoService.pesquisarAmigos(username, friendname).then(amigosEncontrados => {
       listaDeAmigosEncontrados = amigosEncontrados;
       if(listaDeAmigosEncontrados.length == 0) {
-        this.amigos = [];
+        // this.amigos = [];
       }
       listaDeAmigosEncontrados.forEach(amigoEncontrado => {
         this.obterAmigosEmComum(amigoEncontrado);

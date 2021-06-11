@@ -27,7 +27,6 @@ export class AuthGuard implements CanActivate {
 
     if (route.data.roles && !this.auth.hasPermissao(route.data.roles)) {
       this.router.navigate(['/login']);
-      this.errorHandler.handle('Você não tem permissão para acessar esta página.');
       return false;
     }
 

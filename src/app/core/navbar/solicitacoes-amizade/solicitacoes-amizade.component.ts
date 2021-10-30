@@ -1,3 +1,4 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/seguranca/auth.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
@@ -7,7 +8,15 @@ import { SolicitacoesAmizadeService } from './solicitacoes-amizade.service';
 @Component({
   selector: 'app-solicitacoes-amizade',
   templateUrl: './solicitacoes-amizade.component.html',
-  styleUrls: ['./solicitacoes-amizade.component.css']
+  styleUrls: ['./solicitacoes-amizade.component.css'],
+  animations: [
+    trigger('fade', [
+      transition('void <=> *', [
+        style({ opacity: 0, transform: 'scaleY(0.85)'}),
+        animate('100ms ease-in', style({}))
+      ])
+    ])
+  ]
 })
 export class SolicitacoesAmizadeComponent implements OnInit {
 

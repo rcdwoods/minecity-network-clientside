@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,7 +10,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-perfil',
   templateUrl: './pagina-perfil.component.html',
-  styleUrls: ['./pagina-perfil.component.css']
+  styleUrls: ['./pagina-perfil.component.css'],
+  animations: [
+    trigger('tempoCarregamento', [
+      transition(':enter', [
+        style({
+          opacity: 0
+        }),
+        animate('2000ms')
+      ])
+    ])
+  ]
 })
 export class PerfilComponent implements OnInit {
 

@@ -193,9 +193,9 @@
   float: left;
 }
 
-.resultado__opcoes {
-  float: right;
-}
+/* .resultado__opcoes::ng-deep .p-menu{
+  margin-top: -100px !important;
+} */
 
 .resultado__informacoes {
   float: left;

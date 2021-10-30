@@ -10,6 +10,7 @@
   background-size: cover;
   border: rgba(0, 0, 0, 0.493);
   box-shadow: 0px 0px 1px rgba(80, 80, 80, 0.74);
+  overflow: hidden;
 }
 
 .noticias__header {

@@ -11,13 +11,15 @@
         <div class="detalhes__pesquisa">
           <form (ngSubmit)="pesquisarAmigos(friendname.value)">
             <label>Encontrar amigo</label>
-            <input type="text" name="friendname" #friendname ngModel pInputText placeholder="Digite um nome aqui..." [disabled]="amigos.length == 0">
+            <input type="text" name="friendname" #friendname ngModel pInputText placeholder="Digite um nome aqui..."
+              [disabled]="amigos.length == 0">
             <button type="btn" pButton [disabled]="amigos.length == 0">Pesquisar</button>
           </form>
         </div>
-        <div class="detalhes__usuario">
+        <div class="detalhes__usuario" @fade>
           <div class="p-col-5" style="float: left;">
-            <img class="detalhes__avatar" src="http://minotar.net/avatar/{{amigoEmExibicao.username ? amigoEmExibicao.username : 'usernamePadrao'}}">
+            <img class="detalhes__avatar"
+              src="http://minotar.net/avatar/{{amigoEmExibicao.username ? amigoEmExibicao.username : 'usernamePadrao'}}">
           </div>
           <div class="p-col-7" style="float: right;">
             <div class="detalhes__username">
@@ -52,11 +54,14 @@
           </ul>
         </div>
         <div class="resultado__conteudo">
-          <div class="resultado__amigo" *ngFor="let amigo of amigos">
+          <div class="resultado__amigo" *ngFor="let amigo of amigos" @fade>
             <a href="javascript:;" (click)="selecionarAmigoParaExibicao(amigo.username)">
+              <p-menu #menu [popup]="true" [model]="amigosOpcoes" class="resultado__opcoes">
+                <!-- (onShow)="aoClicarEmOpcoesNaPublicacao(publicacao, publicacao.id)" -->
+              </p-menu>
               <a href="javascript:;">
-                <i type="button" class="pi pi-ellipsis-h resultado__opcoes" label="Show"
-                  style="color: rgb(236, 236, 236)"></i>
+                <i type="button" class="pi pi-ellipsis-h" label="Show"
+                  style="color: rgb(236, 236, 236)" (click)="menu.toggle($event); aoClicarEmOpcoes(amigo)"></i>
               </a>
               <img src="http://minotar.net/avatar/{{amigo.username}}" class="resultado__avatar">
               <div class="resultado__informacoes">

@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/core/model';
@@ -8,7 +9,17 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
+  animations: [
+    trigger('carregamento', [
+      transition(':enter', [
+        style({
+          opacity: 0
+        }),
+        animate('200ms 100ms')
+      ])
+    ])
+  ]
 })
 export class HeaderComponent implements OnInit {
 
@@ -54,7 +65,7 @@ export class HeaderComponent implements OnInit {
   }
 
   atualizarUsuarioVisitado() {
-    if(this.usuario?.username) {
+    if (this.usuario?.username) {
       this.usuarioService.getUsuario(this.usuario?.username).then(usuarioAtualizado => {
         this.usuario = usuarioAtualizado;
       })

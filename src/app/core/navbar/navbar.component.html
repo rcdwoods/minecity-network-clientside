@@ -8,7 +8,7 @@
         <span class="p-input-icon-left">
           <i class="pi pi-search navbar__pesquisa-icone"></i>
           <p-autoComplete class="navbar__pesquisa" [(ngModel)]="text" [suggestions]="results"
-            (completeMethod)="search($event)" placeholder="Pesquisa por outro jogador aqui..."
+            (completeMethod)="search($event)" placeholder="Pesquise por outro jogador aqui..."
             (onSelect)="aoSelecionar($event)" [inputStyle]="{'padding-left': '30px'}">
             <ng-template let-username pTemplate="item">
               <img src="http://minotar.net/avatar/{{username}}"

@@ -14,6 +14,7 @@ import { EmblemasComponent } from './emblemas/emblemas.component';
 import { PaginaPerfilService } from './pagina-perfil/pagina-perfil.service';
 import { PaginaAmigosComponent } from './pagina-amigos/pagina-amigos.component';
 import { HeaderComponent } from './header/header.component';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [PerfilComponent, EmblemasComponent, PaginaAmigosComponent, HeaderComponent],
@@ -27,7 +28,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     ButtonModule,
     AccordionModule,
-    TooltipModule
+    TooltipModule,
+    MenuModule
   ],
   exports: [
     PerfilComponent,

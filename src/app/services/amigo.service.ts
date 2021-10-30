@@ -19,7 +19,7 @@ export class AmigoService {
   ) { }
 
   headers = new HttpHeaders()
-    .append('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
 
   getAmigos(username: String): Promise<Array<String>> {
     const headers = this.headers;
@@ -63,7 +63,9 @@ export class AmigoService {
   }
 
   // TO DO
-  excluirAmigo() {
-
+  excluirAmigo(friendname: string): Promise<any> {
+    const headers = this.headers;
+    return this.httpClient.delete(this.usuariosUrl + `${this.authService.jwtPayload.user_name}/amigos/${friendname}`, { headers }).toPromise();;
   }
+
 }

@@ -38,6 +38,16 @@ export class PublicacoesService {
       });
   }
 
+  editarPublicacao(publicacao: Publicacao) {
+    const headers = new HttpHeaders()
+      .append('Authorization', 'Bearer ' + this.authService.obterTokenAtual());
+
+    return this.httpClient.post<any>(this.publicacoesUrl + publicacao.id, publicacao, { headers })
+      .subscribe(publicacao => {
+        this.editarPublicacaoDaListaAtual(publicacao);
+      })
+  }
+
   getPublicacoes(): Promise<any> {
     const headers = new HttpHeaders()
       .append('Authorization', 'Bearer ' + localStorage.getItem('token'));
@@ -60,10 +70,20 @@ export class PublicacoesService {
   removerPublicacaoDaListaAtual(publicacaoId?: string) {
     var publicacoesNova: Array<Publicacao> = [];
     for (var i = 0, j = this.publicacoes.length; i !== j; i++) {
-      if (this.publicacoes[i].id !== publicacaoId) publicacoesNova.push(this.publicacoes[i]);
+      if (this.publicacoes[i].id !== publicacaoId) {
+        publicacoesNova.push(this.publicacoes[i]);
+      }
     }
     this.publicacoes = publicacoesNova;
   };
+
+  editarPublicacaoDaListaAtual(publicacao: Publicacao) {
+    this.publicacoes.forEach(publicacaoDaLista => {
+      if(publicacaoDaLista.id == publicacao.id) {
+        publicacaoDaLista = publicacao;
+      }
+    });
+  }
 
   getPublicacoesDoUsuario(autor: String): Promise<any> {
     const headers = new HttpHeaders()

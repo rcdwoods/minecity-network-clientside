@@ -8,4 +8,5 @@ export class Publicacao {
   comentarios?: Array<Comentario>;
   curtidas?: Array<Curtida>;
   dataPostagem?: Date;
+  editorIsAberto: boolean = false;
 }

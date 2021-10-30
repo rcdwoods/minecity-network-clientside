@@ -1,3 +1,4 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { ThrowStmt } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/core/model';
@@ -6,7 +7,25 @@ import { PaginaFeedService } from 'src/app/feed/pagina-feed/pagina-feed.service'
 @Component({
   selector: 'app-noticias-inicio',
   templateUrl: './noticias-inicio.component.html',
-  styleUrls: ['./noticias-inicio.component.css']
+  styleUrls: ['./noticias-inicio.component.css'],
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({
+          opacity: 0
+        }),
+        animate('500ms 200ms')
+      ]),
+      transition(':leave', [
+        style({
+          opacity: 1
+        }),
+        animate('500ms 200ms', style({
+          opacity: 0
+        }))
+      ])
+    ])
+  ]
 })
 export class NoticiasInicioComponent implements OnInit {
 
